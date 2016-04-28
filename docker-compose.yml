@@ -19,9 +19,9 @@ php:
         - ./source:/var/www/html
 
 mysql:
-    image: mysql:latest
+    image: mysql:5
     volumes:
-        - /var/lib/mysql
+        - mysql_data:/var/lib/mysql
         - ./data:/docker-entrypoint-initdb.d
     environment:
         MYSQL_ROOT_PASSWORD: secret
